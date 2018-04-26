@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <title>WEB1 - html </title>
+  <meta charset="utf-8">
+</head>
+<body>
+
+  <h1><a href="2.html"> WEB </a></h1>
+  <ol>
+    <li><a href="3.html">가나다</a></li>
+    <li><a href="4.html">라마바</a></li>
+    <li><a href="index2.html">사아자</a></li>
+  </ol>
+
+
+  <h2>Timsort</h2>
+  <h3>Class	Sorting algorithm</h3>
+  <p>target에 _blank라고 쓰면 새 페이지로 열림 + title에 쓰는 것은 tooltip <br>
+    <a href="https://en.wikipedia.org/wiki/Timsort" target="_blank" title="tooltip">Data structure	Array<a>
+    <br>
+    Worst-case performance	{\displaystyle O(n\log n)} O(n\log n)[1]
+    Best-case performance	{\displaystyle O(n)} O(n)[2]
+    Average performance	{\displaystyle O(n\log n)} O(n\log n)
+    Worst-case space complexity	{\displaystyle O(n)} O(n)
+    Timsort is a <strong><u>hybrid stable</u> sorting algorithm</strong>, derived from merge sort and insertion sort, designed to perform well on many kinds of real-world data. It uses techniques from Peter McIlroy's "Optimistic Sorting and Information Theoretic Complexity", in Proceedings of the Fourth Annual ACM-SIAM Symposium on Discrete Algorithms, pp. 467–474, January 1993. It was implemented by Tim Peters in 2002 for use in the Python programming language. The algorithm finds subsequences of the data that are already ordered, and uses that knowledge to sort the remainder more efficiently. This is done by merging an identified subsequence, called a run, with existing runs until certain criteria are fulfilled. Timsort has been Python's standard sorting algorithm since version 2.3. It is also used to sort arrays of non-primitive type in Java SE 7,[3] on the Android platform,[4] and in GNU Octave.[5]
+  </p>
+
+  <img src="src/assets/logo.png" width="20%">
+
+  <p style="margin-top:40px;">
+    Operation
+    Timsort was designed to take advantage of runs of consecutive ordered elements that already exist in most real-world data, natural runs. It iterates over the data collecting elements into runs, and simultaneously merging those runs together.
+    <br>
+    Runs
+    Timsort iterates over the data looking for natural runs of at least two elements that are either non-descending (each element is greater than or equal to its predecessor) or strictly descending (each element is less than its predecessor). Descending runs are later blindly reversed, so the strict order maintains the algorithm's stability; i.e., equal elements won't be reversed. Note that any two elements are guaranteed to be either descending or non-descending.
+
+    A reference to each run is then pushed onto a stack.
+
+    Minimum size (minrun)
+
+    Timsort algorithm searches for minimum-size ordered sequences, minruns, to perform its sort.
+    Timsort is an adaptive sort,[6] using insertion sort to combine runs smaller than the minimum run size (minrun), and merge sort otherwise.
+
+    Minrun is selected so most runs in a random array are, or become, minrun in length. It also results in a reasonable number of function calls in the implementation of the sort.[7]
+
+    Because merging is most efficient when the number of runs is equal to, or slightly less than, a power of two, and notably less efficient when the number of runs is slightly more than a power of two, Timsort chooses minrun to try to ensure the former condition.[6]
+
+    Minrun is chosen from the range 32 to 64 inclusive, such that the size of the data, divided by minrun, is equal to, or slightly less than, a power of two. The final algorithm takes the six most significant bits of the size of the array, adds one if any of the remaining bits are set, and uses that result as the minrun. This algorithm works for all arrays, including those smaller than 64; for arrays of size 63 or less, this sets minrun equal to the array size and Timsort reduces to an insertion sort.[6]
+  </p>
+</body>
